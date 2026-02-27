@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA to Percentage Calculator | Jaro Education</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#0029A6"
+      }
+    }
+  }
+}
+</script>
+<style>
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+/* Optional subtle background zoom */
+@keyframes zoomIn {
+  from { transform: scale(1.05); }
+  to { transform: scale(1); }
+}
+
+.hero-img {
+  animation: zoomIn 1.8s ease-out forwards;
+}
+
+/* 🔥 ADD THIS SHAKE ANIMATION BELOW */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+</style>
+
+
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- HEADER -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="text-2xl font-bold text-primary">jaro education</div>
+    <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+      <a href="#">Corporate Connect</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Blogs</a>
+      <a href="#">About Us</a>
+    </nav>
+    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full font-semibold">
+      Login
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="px-6 pt-10">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="relative rounded-3xl overflow-hidden h-[420px] flex items-center justify-center text-center text-white"
+         style="background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover no-repeat;"
+
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 px-6">
+
+        <h1 class="text-4xl md:text-5xl font-semibold fade-up">
+          CGPA to Percentage Calculator
+        </h1>
+
+        <p class="mt-4 text-lg max-w-2xl mx-auto fade-up delay-1">
+          Convert your CGPA into percentage using accurate academic conversion formulas.
+        </p>
+
+        <div class="mt-6 flex justify-center space-x-4 fade-up delay-2">
+          <a href="#calculator"
+             class="bg-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+             Convert Now
+          </a>
+
+          <a href="#programs"
+             class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+             Explore Programs
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- MAIN LAYOUT -->
+<section class="px-6 py-10">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
+
+    <!-- LEFT CONTENT -->
+    <div class="md:col-span-2 space-y-1">
+
+      <!-- CALCULATOR -->
+      <div id="calculator" class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+        <h2 class="text-2xl font-semibold text-primary mb-6">
+          Calculate Your Percentage
+        </h2>
+
+        <div class="space-y-5">
+          <input id="cgpa" type="number" placeholder="Enter CGPA"
+            class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary">
+
+          <select id="formula"
+            class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary">
+            <option value="9.5">Standard (CGPA × 9.5)</option>
+            <option value="10">CGPA × 10</option>
+            <option value="9.25">CGPA × 9.25</option>
+          </select>
+
+          <button onclick="convertCGPA()"
+            class="w-full bg-primary text-white py-3 rounded-lg font-semibold">
+            Convert to Percentage
+          </button>
+
+          <div id="result" class="text-center mt-4"></div>
+        </div>
+      </div>
+<!-- FEATURES -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+
+    <div class="space-y-3">
+      <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+        ✔
+      </div>
+      <h3 class="font-semibold text-lg">Free to Use</h3>
+      <p class="text-sm text-gray-600">Access the calculator anytime without charges.</p>
+    </div>
+
+    <div class="space-y-3">
+      <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+        ⚡
+      </div>
+      <h3 class="font-semibold text-lg">Easy to Use</h3>
+      <p class="text-sm text-gray-600">Simple and quick academic conversion process.</p>
+    </div>
+
+    <div class="space-y-3">
+      <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+        🎯
+      </div>
+      <h3 class="font-semibold text-lg">100% Accuracy</h3>
+      <p class="text-sm text-gray-600">Based on officially accepted conversion standards.</p>
+    </div>
+
+    <div class="space-y-3">
+      <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+        🌍
+      </div>
+      <h3 class="font-semibold text-lg">Intl Standards</h3>
+      <p class="text-sm text-gray-600">Aligned with global GPA & grading systems.</p>
+    </div>
+
+  </div>
+</section>
+
+      <!-- FULL CONTENT SECTIONS -->
+
+  <section class="py-5 bg-gray-20">
+  <div class="max-w-4xl mx-auto px-6 space-y-6">
+    <h2 class="text-3xl font-semibold text-primary">What is CGPA?</h2>
+    <p class="text-gray-700 leading-relaxed">
+      The CGPA stands for Cumulative Grade Point Average and scores on a scale of 0 to 10, where 10 is the maximum achievable score and 0 is the lowest.
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      The CGPA scale was introduced by CBSE to simplify grading for Class 10 and 12 students. Many universities later adopted similar grading systems.
+    </p>
+  </div>
+</section>
+
+  <section class="py-5">
+  <div class="max-w-4xl mx-auto px-6 space-y-6">
+    <h2 class="text-3xl font-semibold text-primary">How to Convert CGPA to Percentage</h2>
+
+    <p class="text-gray-700">
+      Multiply your CGPA by <strong>9.5</strong>.
+      Example: CGPA 9.2 × 9.5 = 87.4%
+    </p>
+
+    <h3 class="text-xl font-semibold mt-6">Steps to Calculate</h3>
+    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+      <li>Add subject scores</li>
+      <li>Divide by total subjects</li>
+      <li>This gives CGPA</li>
+      <li>Multiply CGPA by 9.5</li>
+    </ul>
+
+    <div class="bg-primary/10 p-4 rounded-lg text-primary font-medium">
+      Formula: Percentage = CGPA × 9.5
+    </div>
+  </div>
+</section>
+
+
+ <section class="py-5 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-semibold text-primary mb-6">CGPA Grading System</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border border-gray-200 text-left">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th class="p-3">CGPA</th>
+            <th class="p-3">Grade</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr><td class="p-3">9.1 - 10</td><td class="p-3">A1</td></tr>
+          <tr><td class="p-3">8.1 - 9.0</td><td class="p-3">A2</td></tr>
+          <tr><td class="p-3">7.1 - 8.0</td><td class="p-3">B1</td></tr>
+          <tr><td class="p-3">6.1 - 7.0</td><td class="p-3">B2</td></tr>
+          <tr><td class="p-3">5.1 - 6.0</td><td class="p-3">C1</td></tr>
+          <tr><td class="p-3">4.1 - 5.0</td><td class="p-3">C2</td></tr>
+          <tr><td class="p-3">3.1 - 4.0</td><td class="p-3">D1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="max-w-4xl mx-auto px-6 space-y-6">
+    <h2 class="text-3xl font-semibold text-primary">What is GPA?</h2>
+    <p class="text-gray-700">
+      GPA stands for Grade Point Average and is commonly used by North American universities.
+      The most common GPA scale is 4.0.
+    </p>
+
+    <div class="bg-primary/10 p-4 rounded-lg text-primary font-medium">
+      GPA (4.0) = Percentage ÷ 25
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 space-y-6">
+    <h2 class="text-3xl font-semibold text-primary">What is SGPA?</h2>
+    <p class="text-gray-700">
+      SGPA stands for Semester Grade Point Average and represents performance in a single semester.
+    </p>
+
+    <div class="bg-primary/10 p-4 rounded-lg text-primary font-medium">
+      Percentage = (SGPA × 10) − 7.5
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-semibold text-primary mb-6">UK Grade Scale</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border border-gray-200 text-left">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th class="p-3">Grade Class</th>
+            <th class="p-3">Percentage</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr><td class="p-3">First Class</td><td class="p-3">70% - 100%</td></tr>
+          <tr><td class="p-3">Upper-Second</td><td class="p-3">60% - 70%</td></tr>
+          <tr><td class="p-3">Lower-Second</td><td class="p-3">50% - 60%</td></tr>
+          <tr><td class="p-3">Third Class</td><td class="p-3">40% - 50%</td></tr>
+          <tr><td class="p-3">Fail</td><td class="p-3">Below 40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+    </div>
+
+    <!-- SMALLER STICKY CTA -->
+    <div class="hidden md:block">
+      <div class="sticky top-24">
+
+        <div class="bg-white shadow-lg rounded-xl border overflow-hidden w-[320px]">
+
+          <div class="bg-primary text-white text-center py-4 px-4">
+            <h3 class="text-lg font-semibold">
+              Free Upskilling Guidance
+            </h3>
+          </div>
+
+          <div class="p-5 space-y-3 text-sm">
+            <input type="text" placeholder="Full Name*" class="w-full border rounded-md px-3 py-2">
+            <input type="email" placeholder="Email*" class="w-full border rounded-md px-3 py-2">
+            <input type="text" placeholder="Mobile*" class="w-full border rounded-md px-3 py-2">
+
+            <button class="w-full bg-primary text-white py-2 rounded-md font-semibold">
+              SUBMIT
+            </button>
+
+            <p class="text-xs text-gray-500 text-center">
+              By submitting, you authorize Jaro Education to contact you.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function convertCGPA() {
+  const cgpa = parseFloat(document.getElementById("cgpa").value);
+  const formula = parseFloat(document.getElementById("formula").value);
+
+  if (isNaN(cgpa)) {
+    alert("Enter valid CGPA");
+    return;
+  }
+
+  const percentage = (cgpa * formula).toFixed(2);
+
+  document.getElementById("result").innerHTML =
+    `<h3 class="text-3xl font-semibold text-primary">${percentage}%</h3>`;
+}
+</script>
+<!-- CAREER COUNSELLING POPUP -->
+<div id="counsellingPopup" class="fixed inset-0 z-[999] hidden items-center justify-center">
+
+  <!-- Blur Background -->
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+  <!-- Modal Box -->
+  <div class="relative bg-white w-[90%] max-w-lg rounded-2xl shadow-2xl p-8 transform scale-95 opacity-0 transition-all duration-300"
+       id="popupBox">
+
+    <!-- Close Button -->
+    <button onclick="closePopup()"
+      class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl">
+      ✕
+    </button>
+
+    <!-- Content -->
+    <div class="text-center space-y-4">
+
+      <h2 class="text-2xl font-semibold text-primary">
+        Free Career Counselling
+      </h2>
+
+      <p class="text-gray-600 text-sm">
+        Confused about the right course? Our academic advisors will guide you step-by-step — absolutely free.
+      </p>
+
+      <!-- Benefits -->
+      <div class="text-left text-sm text-gray-700 space-y-2 mt-4">
+        <p>✔ Personalized Career Roadmap</p>
+        <p>✔ Course & University Guidance</p>
+        <p>✔ Scholarship & Fee Assistance</p>
+      </div>
+
+      <!-- Form -->
+      <div class="space-y-3 mt-5">
+        <input id="name" type="text" placeholder="Full Name"
+          class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary">
+
+        <input id="email" type="email" placeholder="Email Address"
+          class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary">
+
+        <input id="mobile" type="text" placeholder="Mobile Number"
+          class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary">
+
+        <p id="formError" class="text-red-500 text-sm hidden"></p>
+
+        <button onclick="validateForm()"
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+
+          Book My Free Session
+        </button>
+
+        <p class="text-xs text-gray-400 text-center mt-2">
+          🔒 Your information is 100% secure. No spam.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+function openPopup() {
+  const popup = document.getElementById("counsellingPopup");
+  const box = document.getElementById("popupBox");
+
+  popup.classList.remove("hidden");
+  popup.classList.add("flex");
+
+  setTimeout(() => {
+    box.classList.remove("scale-95", "opacity-0");
+    box.classList.add("scale-100", "opacity-100");
+  }, 10);
+}
+
+function closePopup() {
+  const popup = document.getElementById("counsellingPopup");
+  const box = document.getElementById("popupBox");
+
+  box.classList.remove("scale-100", "opacity-100");
+  box.classList.add("scale-95", "opacity-0");
+
+  setTimeout(() => {
+    popup.classList.add("hidden");
+  }, 300);
+}
+
+// Auto open after 6 seconds
+setTimeout(openPopup, 6000);
+</script>
+<script>
+function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const error = document.getElementById("formError");
+  const popupBox = document.getElementById("popupBox");
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const mobilePattern = /^[0-9]{10}$/;
+
+  if (name === "" || email === "" || mobile === "") {
+    error.innerText = "Please fill all the details.";
+    error.classList.remove("hidden");
+    shakePopup(popupBox);
+    return;
+  }
+
+  if (!emailPattern.test(email)) {
+    error.innerText = "Please enter a valid email address.";
+    error.classList.remove("hidden");
+    shakePopup(popupBox);
+    return;
+  }
+
+  if (!mobilePattern.test(mobile)) {
+    error.innerText = "Please enter a valid 10-digit mobile number.";
+    error.classList.remove("hidden");
+    shakePopup(popupBox);
+    return;
+  }
+
+  error.classList.add("hidden");
+
+  alert("Thank you! Our career expert will contact you shortly.");
+  closePopup();
+}
+
+function shakePopup(popupBox) {
+  popupBox.classList.add("shake");
+  setTimeout(() => {
+    popupBox.classList.remove("shake");
+  }, 400);
+}
+</script>
+</body>
+</html>
