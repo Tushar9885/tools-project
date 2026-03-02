@@ -163,8 +163,9 @@ tailwind.config = {
           </button>
 
           <div id="result" class="text-center mt-4"></div>
+          <div id="careerMessage" class="mt-4 text-lg font-medium text-primary text-center"></div>
         </div>
-      </div>
+      </div>     
 <!-- FEATURES -->
 <section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
@@ -320,51 +321,54 @@ tailwind.config = {
     </div>
   </div>
 </section>
+</div>
+   <!-- RIGHT SIDEBAR -->
+<!-- RIGHT SIDEBAR -->
+<div class="md:col-span-1 mt-10 md:mt-0">
+  <div class="md:sticky md:top-24">
 
+    <div class="bg-gradient-to-br from-primary to-blue-900 text-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-all duration-300">
 
-    </div>
+      <p class="text-sm uppercase tracking-wider text-white/70">
+        Your Percentage Calculated
+      </p>
 
-    <!-- SMALLER STICKY CTA -->
-    <div class="hidden md:block">
-      <div class="sticky top-24">
+      <h2 class="text-2xl font-semibold mt-3 leading-snug">
+        Now Take the
+        <span class="block text-blue-200">Next Step</span>
+      </h2>
 
-        <div class="bg-white shadow-lg rounded-xl border overflow-hidden w-[320px]">
+      <div class="mt-8 space-y-4">
 
-          <div class="bg-primary text-white text-center py-4 px-4">
-            <h3 class="text-lg font-semibold">
-              Free Upskilling Guidance
-            </h3>
-          </div>
+        <!-- Primary CTA -->
+        <a href="https://upskilling.jaroeducation.com/" target="_blank"
+           class="block w-full bg-white text-primary font-semibold px-6 py-3 rounded-xl text-center transition-all duration-300 hover:scale-105 hover:shadow-xl">
+           Check Your Skill Gap →
+        </a>
 
-          <div class="p-5 space-y-3 text-sm">
-            <input type="text" placeholder="Full Name*" class="w-full border rounded-md px-3 py-2">
-            <input type="email" placeholder="Email*" class="w-full border rounded-md px-3 py-2">
-            <input type="text" placeholder="Mobile*" class="w-full border rounded-md px-3 py-2">
-
-            <button class="w-full bg-primary text-white py-2 rounded-md font-semibold">
-              SUBMIT
-            </button>
-
-            <p class="text-xs text-gray-500 text-center">
-              By submitting, you authorize Jaro Education to contact you.
-            </p>
-          </div>
-
-        </div>
+        <!-- Secondary CTA -->
+        <button onclick="openPopup()"
+           class="block w-full border border-white/60 text-white px-6 py-3 rounded-xl text-center transition-all duration-300 hover:bg-white hover:text-primary">
+           Speak to an Advisor
+        </button>
 
       </div>
+
     </div>
 
   </div>
+</div>
 </section>
-
-<script>
+  <script>
 function convertCGPA() {
 
   const conversionType = document.getElementById("conversionType").value;
   const value = parseFloat(document.getElementById("valueInput").value);
   const formula = parseFloat(document.getElementById("formula").value);
   const resultDiv = document.getElementById("result");
+  const careerMessage = document.getElementById("careerMessage");
+
+  careerMessage.innerHTML = "";
 
   if (isNaN(value) || value <= 0) {
     resultDiv.innerHTML =
@@ -386,9 +390,16 @@ function convertCGPA() {
 
     resultDiv.innerHTML =
       `<h3 class="text-3xl font-semibold text-primary">${result.toFixed(2)}%</h3>`;
-  }
 
-  else {
+    if (result >= 70) {
+      careerMessage.innerHTML =
+        "🎓 Great score! You may qualify for top MBA programs.";
+    } else {
+      careerMessage.innerHTML =
+        "📈 Improve your profile with industry-ready certification programs.";
+    }
+
+  } else {
 
     if (value > 100) {
       resultDiv.innerHTML =
