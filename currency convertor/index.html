@@ -230,7 +230,7 @@ Popular Currency Exchange Rates Today
 
 <tr class="border-b hover:bg-blue-50 transition">
 <td class="p-4 font-medium">USD → INR</td>
-<td class="p-4">Live Rate</td>
+<td class="p-4" id="usdInrRate">Loading...</td>
 <td class="p-4">Dollar to Rupee Today</td>
 <td class="p-4 text-center">
 <a href="#converter" class="bg-[#1E3A8A] text-white px-4 py-2 rounded-lg hover:bg-[#2563EB] transition">Convert</a>
@@ -239,7 +239,7 @@ Popular Currency Exchange Rates Today
 
 <tr class="border-b hover:bg-blue-50 transition">
 <td class="p-4 font-medium">EUR → INR</td>
-<td class="p-4">Live Rate</td>
+<td class="p-4" id="eurInrRate">Loading...</td>
 <td class="p-4">Euro to Rupee Rate</td>
 <td class="p-4 text-center">
 <a href="#converter" class="bg-[#1E3A8A] text-white px-4 py-2 rounded-lg hover:bg-[#2563EB] transition">Convert</a>
@@ -248,7 +248,7 @@ Popular Currency Exchange Rates Today
 
 <tr class="border-b hover:bg-blue-50 transition">
 <td class="p-4 font-medium">GBP → USD</td>
-<td class="p-4">Live Rate</td>
+<td class="p-4" id="gbpUsdRate">Loading...</td>
 <td class="p-4">Pound to Dollar</td>
 <td class="p-4 text-center">
 <a href="#converter" class="bg-[#1E3A8A] text-white px-4 py-2 rounded-lg hover:bg-[#2563EB] transition">Convert</a>
@@ -257,7 +257,7 @@ Popular Currency Exchange Rates Today
 
 <tr class="hover:bg-blue-50 transition">
 <td class="p-4 font-medium">AED → INR</td>
-<td class="p-4">Live Rate</td>
+<td class="p-4" id="aedInrRate">Loading...</td>
 <td class="p-4">Dirham to Rupee Today</td>
 <td class="p-4 text-center">
 <a href="#converter" class="bg-[#1E3A8A] text-white px-4 py-2 rounded-lg hover:bg-[#2563EB] transition">Convert</a>
@@ -428,42 +428,46 @@ document.getElementById("result").innerText =
 
 loadChart(from,to);
 }
+async function loadPopularRates(){
 
-async function loadChart(from,to){
+  try {
 
-const end = new Date();
-const start = new Date();
-start.setDate(end.getDate()-6);
+    // USD Base
+    const usdRes = await fetch("https://open.er-api.com/v6/latest/USD");
+    const usdData = await usdRes.json();
 
-const formatDate = d => d.toISOString().split("T")[0];
+    document.getElementById("usdInrRate").innerText =
+      usdData.rates.INR.toFixed(2);
 
-const res = await fetch(
-`https://api.frankfurter.app/${formatDate(start)}..${formatDate(end)}?from=${from}&to=${to}`
-);
 
-const data = await res.json();
-const labels = Object.keys(data.rates);
-const values = labels.map(date => data.rates[date][to]);
+    // EUR Base
+    const eurRes = await fetch("https://open.er-api.com/v6/latest/EUR");
+    const eurData = await eurRes.json();
 
-if(chartInstance) chartInstance.destroy();
+    document.getElementById("eurInrRate").innerText =
+      eurData.rates.INR.toFixed(2);
 
-chartInstance = new Chart(document.getElementById("rateChart"),{
-type:"line",
-data:{
-labels,
-datasets:[{
-label:`${from} to ${to}`,
-data:values,
-fill:true,
-tension:.4
-}]
-},
-options:{
-responsive:true,
-maintainAspectRatio:false
+
+    // GBP Base
+    const gbpRes = await fetch("https://open.er-api.com/v6/latest/GBP");
+    const gbpData = await gbpRes.json();
+
+    document.getElementById("gbpUsdRate").innerText =
+      gbpData.rates.USD.toFixed(4);
+
+
+    // AED Base
+    const aedRes = await fetch("https://open.er-api.com/v6/latest/AED");
+    const aedData = await aedRes.json();
+
+    document.getElementById("aedInrRate").innerText =
+      aedData.rates.INR.toFixed(2);
+
+  } catch (error) {
+    console.log("Error loading popular rates", error);
+  }
 }
-});
-}
+loadPopularRates();
 
 </script>
 
