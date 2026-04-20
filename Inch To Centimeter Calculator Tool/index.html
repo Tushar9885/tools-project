@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Unit Conversion Calculator – Inch, CM, Meter, Feet & More | Jaro Education</title>
+  <meta name="description" content="Free unit conversion calculator to convert inches to cm, meter to feet, acre to square meter & more. Fast & accurate tools by Jaro Education.">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<header class="w-full bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <span class="text-2xl font-semibold text-gray-800">
+        jaro <span class="text-gray-500 font-normal">education</span>
+      </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+
+      <!-- Course Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100">
+          Course
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- Dropdown -->
+        <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded-lg w-48">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">MBA Programs</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Data Science</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">AI Courses</a>
+        </div>
+      </div>
+
+      <a href="#" class="hover:text-blue-600">Corporate Connect</a>
+      <a href="#" class="hover:text-blue-600">Contact Us</a>
+      <a href="#" class="hover:text-blue-600">Blogs</a>
+
+      <!-- Freemium Highlight -->
+      <a href="#" class="text-yellow-500 font-semibold">Freemium</a>
+
+      <a href="#" class="hover:text-blue-600">Jaro for Investors</a>
+
+      <!-- More Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center">
+          More
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded-lg w-40">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">About</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Careers</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Login Button -->
+    <div>
+      <button class="bg-blue-700 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-800">
+        Login
+      </button>
+    </div>
+
+  </div>
+</header>    
+
+<section class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white overflow-hidden">
+
+  <!-- Background Blur Shapes -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-400 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-400 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+
+  <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between">
+
+    <!-- LEFT CONTENT -->
+    <div class="md:w-1/2 space-y-6 z-10">
+
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight animate-fadeInUp">
+        All-in-One Unit Conversion Calculator
+      </h1>
+
+      <p class="text-lg text-blue-100 animate-fadeInUp delay-200">
+        Instantly convert inches, centimeters, meters, feet, acres & more with accurate and easy-to-use online tools.
+      </p>
+
+      <!-- CTA -->
+      <div class="flex gap-4 animate-fadeInUp delay-300">
+        <a href="#calculators" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+          Start Calculating
+        </a>
+
+        <a href="#faq" class="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-700 transition">
+          Learn More
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="flex items-center gap-6 pt-4 text-sm text-blue-100 animate-fadeInUp delay-500">
+        <span>✔ 100% Free</span>
+        <span>✔ Instant Results</span>
+        <span>✔ Accurate Calculations</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+
+  <img 
+    src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
+    alt="Unit Conversion Calculator"
+    class="rounded-2xl shadow-2xl w-full max-w-md object-cover"
+  />
+
+</div>
+</section>
+
+<!-- Custom Animations -->
+<style>
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+</style>
+
+<section id="calculators" class="bg-gradient-to-b from-gray-50 to-white py-16">
+
+  <!-- Section Heading -->
+  <div class="max-w-4xl mx-auto text-center mb-12 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+      Unit Conversion Calculators
+    </h2>
+    <p class="mt-4 text-gray-600">
+      In today’s academic and professional world, quick and accurate unit conversion is essential. 
+      Convert inches, centimeters, meters, feet, and more instantly with our smart calculators.
+    </p>
+  </div>
+
+  <!-- Grid -->
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-blue-100 text-blue-600 p-3 rounded-xl">📏</div>
+        <h3 class="text-lg font-semibold">Inch to Centimeter</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Easily convert inches into centimeters. Ideal for education, construction, and design use.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 inch = 2.54 cm</p>
+
+      <input id="inch" type="number" placeholder="Enter Inches"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
+
+      <button onclick="inchToCm()"
+        class="mt-4 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 rounded-lg font-medium hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="inchResult" class="mt-3 font-semibold text-blue-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-green-100 text-green-600 p-3 rounded-xl">📐</div>
+        <h3 class="text-lg font-semibold">Centimeter to Feet</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert centimeters into feet instantly for height and real estate measurements.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 cm = 0.0328084 ft</p>
+
+      <input id="cmFeet" type="number" placeholder="Enter CM"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-green-400 outline-none">
+
+      <button onclick="cmToFeet()"
+        class="mt-4 w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="cmFeetResult" class="mt-3 font-semibold text-green-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-purple-100 text-purple-600 p-3 rounded-xl">📊</div>
+        <h3 class="text-lg font-semibold">Meter to Feet</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert meters into feet accurately. Ideal for engineering and architecture.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 meter = 3.28084 ft</p>
+
+      <input id="meter" type="number" placeholder="Enter Meter"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-purple-400 outline-none">
+
+      <button onclick="meterToFeet()"
+        class="mt-4 w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="meterResult" class="mt-3 font-semibold text-purple-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-orange-100 text-orange-600 p-3 rounded-xl">📏</div>
+        <h3 class="text-lg font-semibold">Feet to CM</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Quickly convert feet into centimeters for accurate height and dimensions.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 ft = 30.48 cm</p>
+
+      <input id="feet" type="number" placeholder="Enter Feet"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none">
+
+      <button onclick="feetToCm()"
+        class="mt-4 w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="feetResult" class="mt-3 font-semibold text-orange-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-pink-100 text-pink-600 p-3 rounded-xl">⚙️</div>
+        <h3 class="text-lg font-semibold">Meter to MM</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert meters into millimeters instantly for technical and engineering use.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 meter = 1000 mm</p>
+
+      <input id="meterMm" type="number" placeholder="Enter Meter"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-pink-400 outline-none">
+
+      <button onclick="meterToMm()"
+        class="mt-4 w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="meterMmResult" class="mt-3 font-semibold text-pink-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-teal-100 text-teal-600 p-3 rounded-xl">📐</div>
+        <h3 class="text-lg font-semibold">MM to CM</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert millimeters into centimeters easily for precise measurements.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 mm = 0.1 cm</p>
+
+      <input id="mm" type="number" placeholder="Enter MM"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-teal-400 outline-none">
+
+      <button onclick="mmToCm()"
+        class="mt-4 w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="mmResult" class="mt-3 font-semibold text-teal-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-xl">📏</div>
+        <h3 class="text-lg font-semibold">Meter to Inch</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert meters into inches accurately for design and manufacturing.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 meter = 39.3701 inch</p>
+
+      <input id="meterInch" type="number" placeholder="Enter Meter"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none">
+
+      <button onclick="meterToInch()"
+        class="mt-4 w-full bg-gradient-to-r from-indigo-500 to-blue-600 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="meterInchResult" class="mt-3 font-semibold text-indigo-600"></p>
+    </div>
+
+    <!-- CARD -->
+    <div class="group bg-white/70 backdrop-blur-lg border p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="bg-yellow-100 text-yellow-600 p-3 rounded-xl">🌍</div>
+        <h3 class="text-lg font-semibold">Acre to Sq Meter</h3>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-3">
+        Convert acres into square meters. Ideal for land and real estate calculations.
+      </p>
+
+      <p class="text-xs text-gray-500 mb-4">1 acre = 4046.86 sq.m</p>
+
+      <input id="acre" type="number" placeholder="Enter Acre"
+        class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-yellow-400 outline-none">
+
+      <button onclick="acreToSqm()"
+        class="mt-4 w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 rounded-lg hover:scale-105 transition">
+        Convert
+      </button>
+
+      <p id="acreResult" class="mt-3 font-semibold text-yellow-600"></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-gradient-to-b from-white to-gray-50 py-10">
+  <div class="max-w-6xl mx-auto px-6">
+
+     <!-- TOP BLOCK -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
+        Why Use Our Unit Conversion Calculator?
+      </h2>
+      <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        In today’s fast-paced academic and professional environment, accurate unit conversion is more important than ever. 
+        Whether you're solving a math problem, working on an engineering project, or calculating land area, even a small mistake can lead to incorrect results.
+      </p>
+    </div>
+
+     <!-- DIVIDER -->
+    <div class="w-20 h-1 bg-blue-600 mx-auto mb-5 rounded-full"></div>
+
+  <!-- SECOND BLOCK -->
+    <div class="bg-white shadow-xl rounded-2xl p-8 md:p-12 text-center hover:shadow-2xl transition">
+
+      <h3 class="text-2xl md:text-3xl font-semibold text-gray-800">
+        Benefits of Using an Online Unit Conversion Tool
+      </h3>
+
+      <p class="mt-6 text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        Using an online unit conversion calculator offers several advantages over traditional manual methods. It ensures accurate and reliable results, significantly reducing the chances of human error. Instead of switching between multiple tools or remembering complex formulas, users can perform different conversions in one place quickly and efficiently. The tool is designed to be user-friendly and accessible anytime, making it ideal for students, professionals, and everyday users who need fast and precise calculations.
+      </p>
+
+    <!-- Content Grid -->
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Card -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">
+          Types of Unit Conversions Covered
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          This unit conversion calculator supports a wide range of measurement conversions, making it a versatile and practical tool for multiple applications. It includes length conversions such as inch to centimeter, meter to feet, and millimeter to centimeter. It also supports area conversions like acre to square meter, which are highly useful in real estate and land measurement. Additionally, volume conversions such as cubic foot to cubic meter are included, making it useful for construction and logistics. By supporting both metric and imperial units, this tool ensures seamless conversion across different systems.
+        </p>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-indigo-700 mb-4">
+          Who Can Use This Unit Conversion Calculator?
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          This calculator is designed for a wide range of users. Students can use it to solve academic problems and complete assignments efficiently. Engineers and architects can rely on it for precise project measurements, while real estate professionals can use it for land and property calculations. Designers working with layouts and dimensions can also benefit from accurate conversions. It is equally helpful for anyone who needs quick and reliable unit conversions in their daily tasks.
+        </p>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-green-700 mb-4">
+          Why Online Conversion Tools Are More Efficient
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Manual calculations often require remembering formulas and performing multiple steps, which increases the chances of errors and consumes valuable time. Online unit conversion tools eliminate this complexity by providing instant results with high accuracy. With just a single input, users can get precise conversions without worrying about mistakes, making these tools faster and more reliable for both academic and professional use.
+        </p>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-purple-700 mb-4">
+          Explore More Useful Calculators
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Apart from unit conversion, you can also explore other helpful tools such as CGPA to Percentage Calculator, EMI Calculator, ROI Calculator, and Salary Calculator. These tools are designed to support academic and financial calculations, helping you manage studies, career planning, and financial decisions more efficiently.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- Content Cards -->
+    <div class="grid md:grid-cols-2 gap-10 mb-16">
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">Key Benefits</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li>✔ Instant and accurate conversion results</li>
+          <li>✔ No need for manual formulas</li>
+          <li>✔ Multiple unit conversions in one place</li>
+          <li>✔ Saves time and improves productivity</li>
+          <li>✔ 100% free and easy to use</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Who Can Use This Tool?</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li>📘 Students and learners</li>
+          <li>🏗 Engineers & architects</li>
+          <li>🏡 Real estate professionals</li>
+          <li>🎨 Designers and planners</li>
+          <li>👨‍💻 Anyone needing quick conversions</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Detailed Explanation -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Detailed Unit Conversion Calculators Explained
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- CARD -->
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📏 Inch to Centimeter</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Convert inches into centimeters instantly for education and design use.
+          </p>
+          <span class="text-xs text-gray-500">1 inch = 2.54 cm</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📐 CM to Feet</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Useful for height and real estate measurements.
+          </p>
+          <span class="text-xs text-gray-500">1 cm = 0.0328084 ft</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📊 Meter to Feet</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Widely used in construction and engineering.
+          </p>
+          <span class="text-xs text-gray-500">1 meter = 3.28084 ft</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📏 Feet to CM</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Perfect for height and room measurements.
+          </p>
+          <span class="text-xs text-gray-500">1 ft = 30.48 cm</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">⚙️ Meter to MM</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Ideal for precise engineering calculations.
+          </p>
+          <span class="text-xs text-gray-500">1 meter = 1000 mm</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📐 MM to CM</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Useful for small-scale measurements.
+          </p>
+          <span class="text-xs text-gray-500">1 mm = 0.1 cm</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📏 Meter to Inch</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Common in manufacturing and global measurements.
+          </p>
+          <span class="text-xs text-gray-500">1 meter = 39.3701 inch</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">📦 Cubic Ft to m³</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Used for volume calculations in storage and construction.
+          </p>
+          <span class="text-xs text-gray-500">1 ft³ = 0.0283168 m³</span>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border p-6 rounded-xl shadow hover:shadow-xl transition hover:-translate-y-1">
+          <h4 class="font-semibold text-lg mb-2">🌍 Acre to Sq Meter</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Important for land and real estate calculations.
+          </p>
+          <span class="text-xs text-gray-500">1 acre = 4046.86 m²</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-10 rounded-2xl text-center shadow-lg">
+      <h3 class="text-2xl font-semibold">Explore More Useful Calculators</h3>
+      <p class="mt-3 text-blue-100">
+        Boost your productivity with more smart tools.
+      </p>
+
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href="#" class="bg-white text-blue-700 px-5 py-2 rounded-full hover:bg-gray-100 transition">CGPA Calculator</a>
+        <a href="#" class="bg-white text-blue-700 px-5 py-2 rounded-full hover:bg-gray-100 transition">EMI Calculator</a>
+        <a href="#" class="bg-white text-blue-700 px-5 py-2 rounded-full hover:bg-gray-100 transition">ROI Calculator</a>
+        <a href="#" class="bg-white text-blue-700 px-5 py-2 rounded-full hover:bg-gray-100 transition">Salary Calculator</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq" class="bg-gray-50 py-16">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
+      Frequently Asked Questions
+    </h2>
+
+    <div class="space-y-4">
+
+      <!-- FAQ ITEM -->
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">How do I convert inches to centimeters?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          To convert inches into centimeters, multiply the value by 2.54.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">What is 1 meter in feet?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          1 meter is equal to 3.28084 feet.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">What is the formula for converting feet to centimeters?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Multiply the value in feet by 30.48 to get centimeters.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">How do I convert meters to millimeters?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Multiply meters by 1000 to convert into millimeters.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">What is 1 acre in square meters?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          1 acre equals 4046.86 square meters.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Can I use this calculator for academic purposes?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Yes, this calculator is highly useful for students solving assignments and exam problems.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Is this unit conversion calculator free to use?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Yes, it is completely free and accessible online without any registration.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Which units can I convert using this tool?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          You can convert units like inches, centimeters, meters, feet, millimeters, acres, and more.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Why should I use an online unit converter?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Online calculators provide fast, accurate results and eliminate the risk of manual calculation errors.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Is this calculator suitable for professional use?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Yes, professionals like engineers, architects, and designers can rely on this tool for precise conversions.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Does this tool support real estate conversions?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Yes, it supports conversions like acre to square meter which are widely used in real estate.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5 cursor-pointer" onclick="toggleFAQ(this)">
+        <h3 class="font-semibold text-lg">Can I access this calculator on mobile?</h3>
+        <p class="text-gray-600 mt-2 hidden">
+          Yes, the tool is fully responsive and works seamlessly on mobile devices.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleFAQ(el){
+  let p = el.querySelector("p");
+  p.classList.toggle("hidden");
+}
+</script>
+
+<!-- JS -->
+<script>
+function inchToCm(){
+  let v = document.getElementById("inch").value;
+  document.getElementById("inchResult").innerText = (v * 2.54) + " cm";
+}
+
+function cmToFeet(){
+  let v = document.getElementById("cmFeet").value;
+  document.getElementById("cmFeetResult").innerText = (v * 0.0328084).toFixed(2) + " ft";
+}
+
+function meterToFeet(){
+  let v = document.getElementById("meter").value;
+  document.getElementById("meterResult").innerText = (v * 3.28084).toFixed(2) + " ft";
+}
+
+function feetToCm(){
+  let v = document.getElementById("feet").value;
+  document.getElementById("feetResult").innerText = (v * 30.48) + " cm";
+}
+
+function meterToMm(){
+  let v = document.getElementById("meterMm").value;
+  document.getElementById("meterMmResult").innerText = (v * 1000) + " mm";
+}
+
+function mmToCm(){
+  let v = document.getElementById("mm").value;
+  document.getElementById("mmResult").innerText = (v * 0.1) + " cm";
+}
+
+function meterToInch(){
+  let v = document.getElementById("meterInch").value;
+  document.getElementById("meterInchResult").innerText = (v * 39.3701).toFixed(2) + " inch";
+}
+
+function acreToSqm(){
+  let v = document.getElementById("acre").value;
+  document.getElementById("acreResult").innerText = (v * 4046.86) + " sq.m";
+}
+</script>
+
+</body>
+</html>
